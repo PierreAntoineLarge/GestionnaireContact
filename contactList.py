@@ -83,6 +83,7 @@ def edit_contact():
     if selected_index >= 0:
         edited_name = edited_name_entry.get()
         edited_number = edited_number_entry.get()
+        edited_lastname = edited_lastname_entry.get()
 
         if edited_name and edited_number:
             contacts[selected_index]["contact_name"] = edited_name
@@ -100,8 +101,8 @@ def update_selected_contact_number(event=None):
     if selected_index >= 0:
         selected_contact = contacts[selected_index]
         selected_contact_number.set("Nom : " + selected_contact["contact_name"] + " " + "Prénom :" + selected_contact["contact_lastname"] + " " + " Numéro : " + selected_contact["contact_number"]  )
-        edited_name_entry.delete(0, tk.END)
-        edited_name_entry.insert(0, selected_contact["contact_lastname"])
+        edited_lastname_entry.delete(0, tk.END)
+        edited_lastname_entry.insert(0, selected_contact["contact_lastname"])
         edited_name_entry.delete(0, tk.END)
         edited_name_entry.insert(0, selected_contact["contact_name"])
         edited_number_entry.delete(0, tk.END)
